@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="index.css">
+    <title>Aplicacion de Gastos</title>
+</head>
+
+<body>
+    <h1>Aplicacion de Gastos</h1>
+    <div class="row">
+        <div class="col s6">
+            <form class="info" id="transactionForm" action="">
+                <div class="info">
+                    Tipo de transaccion:
+                    <p>
+                        <label for="transactionType">
+                          <input  value="ingreso" class="with-gap" name="transactionType" id="transactionType" type="radio" checked />
+                          <span>ingreso</span>
+                        </label>
+                        <label for="transactionType">
+                            <input value="egreso" class="with-gap" name="transactionType" id="transactionType" type="radio" checked />
+                            <span>egreso</span>
+                          </label>
+                    </p>
+                </div>
+
+                <div class="input-field col s12">
+                    <input required id="transactionDescription" name="transactionDescription" type="text" class="validate">
+                    <label for="Descripcion">Descripcion</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="">Monto</label>
+                    <input min="0" type="number" class="validate" name="transactionAmount" id="transactionAmount">
+                </div>
+
+                <div class="info">
+                    <label for="Categoria">Categoria</label>
+                    <select class="browser-default" id="transactionCategory" name="transactionCategory">
+                      <option value="" disabled selected>Elige la opcion</option>
+                      <option value="Comida">Comida</option>
+                      <option value="Verdura">Verdura</option>
+                      <option value="Otros">Otros</option>
+                    </select>
+                </div>
+                <div class="info">
+                    <button class="btn waves-effect waves-light" id="btn">Añadir</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col s6">
+            <table id="transactionTable">
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descripcion</th>
+                    <th>Monto</th>
+                    <th>Categoria</th>
+                    <th>Eliminar</th>
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

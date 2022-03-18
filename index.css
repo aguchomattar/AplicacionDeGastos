@@ -1,0 +1,25 @@
+        .info {
+            background-color: rgb(111, 112, 221);
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        
+        .formfield {
+            margin-bottom: 5px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        th,
+        td {
+            border: solid 1px white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .table-format table {
+            margin: 20px auto;
+        }
