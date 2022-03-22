@@ -10,8 +10,21 @@ form.addEventListener("submit", (e) => {
 
 })
 
+function drawCategory() {
+    let allCategories = ["Alquiler", "Comida", "Diversion", "otros"]
+    for (index = 0; index < allCategories.length; index++) {
+        insertCategory(allCategories[index])
+    }
+}
+
+function insertCategory(categoryName) {
+    const selectElement = document.getElementById("transactionCategory")
+    let htmlToInsert = `<option>${categoryName}</option>`
+    selectElement.insertAdjacentHTML("beforeend", htmlToInsert)
+}
+
 document.addEventListener("DOMContentLoaded", (e) => {
-    e.preventDefault();
+    drawCategory()
     let transactionObjArr = JSON.parse(localStorage.getItem("transactionData"))
     transactionObjArr.forEach(arrayElement => {
         inserRowData(arrayElement)
@@ -82,7 +95,7 @@ function saveTransactionObj(transactionObj) {
 
 function deleteTransactionObj(transactionId) {
     let transactionObjArr = JSON.parse(localStorage.getItem("transactionData"))
-    let transactionIndexInArray = transactionObjArr.findIndex(element => element.transactionId === transactionId)
+    let transactionIndexInArray = transactionObjArr.findIndex(element => element.transactionId == transactionId)
     transactionObjArr.splice(transactionIndexInArray, 1);
     let transactionArrayJSON = JSON.stringify(transactionObjArr);
     localStorage.setItem("transactionData", transactionArrayJSON)

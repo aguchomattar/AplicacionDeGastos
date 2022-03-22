@@ -14,11 +14,11 @@
 <body>
     <h1>Aplicacion de Gastos</h1>
     <div class="row">
-        <div class="col s6">
+        <div class="col l5 offset-l1 s12">
             <form class="info" id="transactionForm" action="">
                 <div class="info">
-                    Tipo de transaccion:
                     <p>
+                        <span>Transaccion:</span>
                         <label for="transactionType">
                           <input  value="ingreso" class="with-gap" name="transactionType" id="transactionType" type="radio" checked />
                           <span>ingreso</span>
@@ -29,6 +29,7 @@
                           </label>
                     </p>
                 </div>
+
 
                 <div class="input-field col s12">
                     <input required id="transactionDescription" name="transactionDescription" type="text" class="validate">
@@ -42,11 +43,9 @@
 
                 <div class="info">
                     <label for="Categoria">Categoria</label>
-                    <select class="browser-default" id="transactionCategory" name="transactionCategory">
+                    <select class="browser-default" id="transactionCategory" name="transactionCategory" required>
                       <option value="" disabled selected>Elige la opcion</option>
-                      <option value="Comida">Comida</option>
-                      <option value="Verdura">Verdura</option>
-                      <option value="Otros">Otros</option>
+                      
                     </select>
                 </div>
                 <div class="info">
@@ -55,18 +54,20 @@
             </form>
         </div>
 
-        <div class="col s6">
-            <table id="transactionTable">
-                <tr>
-                    <th>Tipo</th>
-                    <th>Descripcion</th>
-                    <th>Monto</th>
-                    <th>Categoria</th>
-                    <th>Eliminar</th>
-                </tr>
+        <div class="col l5 s12">
+            <div class="col s8 offset-s2 ">
+                <table id="transactionTable">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Descripcion</th>
+                        <th>Monto</th>
+                        <th>Categoria</th>
+                        <th>Eliminar</th>
+                    </tr>
 
 
-            </table>
+                </table>
+            </div>
         </div>
     </div>
 
